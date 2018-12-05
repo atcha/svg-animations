@@ -1,0 +1,259 @@
+:root {
+    --color-primary: #62AD00;
+    --color-secondary: #C9D04E;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.iconsvg { width: 20%; }
+
+.icon-color-stroke {
+    fill: none;
+    stroke: var(--color-secondary);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.icon-color-fill {
+    fill: var(--color-secondary);
+    stroke: var(--color-secondary);
+    stroke-width: 0.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+/**
+ * Animation Eolienne
+ **/
+.iconsvg-eolienne:hover .pale {
+    animation-name: eolienne;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/**
+ * Animation Abres nuages
+ **/
+
+.iconsvg-nuages:hover #XMLID_10_ {
+    animation-name: nuages;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+/**
+ * Animation blés
+ **/
+.iconsvg-agriculture:hover #XMLID_146_,
+.iconsvg-agriculture:hover #XMLID_145_,
+.iconsvg-agriculture:hover #XMLID_144_,
+.iconsvg-agriculture:hover #XMLID_143_,
+.iconsvg-agriculture:hover #XMLID_142_,
+.iconsvg-agriculture:hover #XMLID_141_,
+.iconsvg-agriculture:hover #XMLID_140_,
+.iconsvg-agriculture:hover #XMLID_139_ {
+    animation-name: agriculture;
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.iconsvg-agriculture:hover #XMLID_126_,
+.iconsvg-agriculture:hover #XMLID_74_,
+.iconsvg-agriculture:hover #XMLID_73_,
+.iconsvg-agriculture:hover #XMLID_72_,
+.iconsvg-agriculture:hover #XMLID_13_,
+.iconsvg-agriculture:hover #XMLID_12_ {
+    animation-name: agriculturesecond;
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/**
+ * Animation disc
+ **/
+.iconsvg-culture:hover .disc {
+    animation-name: disc;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/**
+ * Animation chapeau
+ **/
+.iconsvg-chapeau:hover #XMLID_13_,
+.iconsvg-chapeau:hover #XMLID_72_ {
+    animation-name: chapeau;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+/**
+ * Animation cochon
+ **/
+.iconsvg-cochon:hover #euro {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    fill: transparent;
+    animation: cochon 2s linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+} 
+
+/**
+ * Animation eau
+ **/
+.iconsvg-eau:hover .goutte {
+    animation: goutte 2s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/**
+ * Animation maison
+ **/
+.iconsvg-logement:hover .toit {
+    animation: maison .6s ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.iconsvg-poumons:hover .poumon {
+    /*stroke-dasharray: 200;
+    stroke-dashoffset: 200;*/
+    animation: poumon .8s ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 60%; 
+}
+
+@keyframes eolienne {
+    0% {
+        transform-origin: center;
+        transform: rotate(0deg);
+    }
+    100% {
+        transform-origin: center;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes nuages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }    
+}
+
+@keyframes agriculture {
+    0% {
+        transform-origin: 15px 60px;
+        transform: rotate(0deg);
+    }
+    25% {
+        transform-origin: 15px 60px;
+        transform: rotate(5deg);
+    }
+    50% {
+        transform-origin: 15px 60px;
+        transform: rotate(0deg);
+    }
+    75% {
+        transform-origin: 15px 60px;
+        transform: rotate(-5deg);        
+    }
+    100% {
+        transform-origin: 15px 60px;
+        transform: rotate(0deg);
+    }
+}
+@keyframes agriculturesecond {
+    0% {
+        transform-origin: 43px 60px;
+        transform: rotate(0deg);
+    }
+    25% {
+        transform-origin: 43px 60px;
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform-origin: 43px 60px;
+        transform: rotate(0deg);
+    }
+    75% {
+        transform-origin: 43px 60px;
+        transform: rotate(5rdeg);        
+    }
+    100% {
+        transform-origin: 43px 60px;
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes disc {
+    0% {
+        transform-origin: 16.8px 21.5px;
+        transform: rotate(0deg);
+    }
+    100% {
+        transform-origin: 16.8px 21.5px;
+        transform: rotate(360deg);
+    }    
+}
+
+@keyframes chapeau {
+    0% {
+        transform-origin: 17.5px 34px;
+        transform: rotate(40deg);
+    }
+    100% {
+        transform-origin: 17.5px 34px;
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes cochon {
+    to {
+        stroke-dashoffset: 0;
+        fill: var(--color-secondary);
+    }
+}
+
+@keyframes goutte {
+    to {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
+@keyframes maison {
+    0% {
+        transform-origin: 2px 50%;        
+    }
+    to {
+        transform: rotate(-9deg);
+        transform-origin: 2px 50%;
+    }
+}
+
+@keyframes poumon {
+    to {
+        transform: scale(1.07);       
+    }
+}
+
