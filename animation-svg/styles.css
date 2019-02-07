@@ -157,12 +157,31 @@ body {
 }
 
 .iconsvg-solidarite:hover .mains {
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-    fill: transparent;
-    animation: mains 1.5s linear;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+    fill-opacity: 0;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration: 1;
+    animation-name: DrawLine, FillIn;
+    animation-delay: .5s, 1s;
+    animation-duration: 2.5s, .8s;
+    stroke-dashArray: 1500;
+    stroke-dashoffset: 1500;
+}
+
+.iconsvg-ess:hover .linetop, .iconsvg-ess:hover .linebottom {
+    fill-opacity: 0;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration: 1;
+    animation-name: DrawLine;
+    animation-delay: .2s;
+    animation-duration: 2.5s;
+    stroke-dashArray: 1500;
+    stroke-dashoffset: 1500;
+}
+.iconsvg-ess:hover .linebottom {
+    animation-delay: .1s;
+    animation-duration: 2.5s;
 }
 
 @keyframes eolienne {
@@ -291,7 +310,16 @@ body {
     }
 }
 
-@keyframes mains {
+@keyframes DrawLine {
+    to { stroke-dashOffset: 0; }
+}
+
+@keyframes FillIn {
+    from { fill-opacity: 0; }
+    to { fill-opacity: 1; }
+}
+
+@keyframes essline {
     to {
         stroke-dashoffset: 0;
         fill: var(--color-secondary);
